@@ -1,0 +1,24 @@
+{
+  "name": "@dck/rescript-<module>",
+  "uncurried": true,
+  "namespace": false,
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "tests",
+      "type": "dev",
+      "subdirs": true
+    }
+  ],
+  "suffix": ".mjs",
+  "bs-dev-dependencies": ["@rescript/core", "rescript-bun"],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ]
+}
