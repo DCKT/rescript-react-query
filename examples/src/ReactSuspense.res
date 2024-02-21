@@ -12,7 +12,7 @@ module Page = {
   }
   @react.component
   let make = () => {
-    let {data, isFetching} = useSuspenseQuery({
+    let {data} = useSuspenseQuery({
       queryKey: ["repoData"],
       queryFn: _ => Ky.get("https://api.github.com/repos/tannerlinsley/react-query").json(),
     })
@@ -23,7 +23,6 @@ module Page = {
       <strong> {`👀 ${data.subscribers_count->Int.toString}`->React.string} </strong>
       <strong> {`✨ ${data.stargazers_count->Int.toString}`->React.string} </strong>
       <strong> {`🍴 ${data.forks_count->Int.toString}`->React.string} </strong>
-      <div> {isFetching ? "Updating..."->React.string : React.null} </div>
     </div>
   }
 }
