@@ -4,7 +4,10 @@
   "description": "ReScript bindings for react-query",
   "keywords": [
     "rescript",
-    "bindings"
+    "bindings",
+    "react",
+    "react-query",
+    "hooks"
   ],
   "license": "MIT",
   "author": {
