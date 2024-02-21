@@ -48,8 +48,14 @@ Compiles files
 bun run dev
 ```
 
-Run tests
+Run tests through examples
 
 ```bash
-bun test
+bun run examples
+```
+
+Run local webserver
+
+```bash
+bun run examples-server
 ```

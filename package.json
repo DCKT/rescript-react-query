@@ -30,7 +30,9 @@
   "scripts": {
     "build": "rescript build",
     "dev": "rescript build -w",
-    "clean": "rescript clean"
+    "clean": "rescript clean",
+    "examples": "cd examples && bun run start",
+    "examples-server": "bun run examples/src/server.bs.js"
   },
   "files": [
     "src/*",

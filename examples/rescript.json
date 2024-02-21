@@ -22,6 +22,11 @@
     "mode": "automatic"
   },
   "uncurried": true,
-  "bs-dependencies": ["@rescript/react", "@rescript/core", "@dck/rescript-ky"],
+  "bs-dependencies": [
+    "@rescript/react",
+    "@rescript/core",
+    "@dck/rescript-ky",
+    "rescript-bun"
+  ],
   "bsc-flags": ["-open RescriptCore"]
 }

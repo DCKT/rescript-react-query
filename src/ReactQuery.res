@@ -74,7 +74,11 @@ external useQueryWithSelect: queryOptionsWithSelect<'data, 'selectedData> => que
 @module("@tanstack/react-query")
 external useQueries: useQueriesOptions<'data> => array<queryState<'data>> = "useQueries"
 
-type useMutationOptions<'params, 'data> = {mutationFn: 'params => promise<'data>, retry?: int}
+type useMutationOptions<'params, 'data> = {
+  mutationFn: 'params => promise<'data>,
+  retry?: int,
+  onSettled?: unit => unit,
+}
 type mutationStatus =
   | @as("error") Error
   | @as("pending") Pending
