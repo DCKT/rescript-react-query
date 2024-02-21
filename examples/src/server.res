@@ -29,6 +29,10 @@ let server = Bun.serve({
         await wait(2000)
         jsonResponse({"counter": counter.contents}, ~options={headers: FromArray(corsHeaders)})
       }
+    | "/increase-error" => {
+        await wait(1000)
+        jsonResponse(None, ~options={status: 500, headers: FromArray(corsHeaders)})
+      }
     | "/decrease" => {
         counter := counter.contents - 1
         jsonResponse({"counter": counter.contents}, ~options={headers: FromArray(corsHeaders)})

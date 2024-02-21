@@ -17,6 +17,6 @@ module ReactQueryDevtools = {
     ~initialIsOpen: bool,
     ~buttonPosition: buttonPosition=?,
     ~position: position=?,
-    ~client: ReactQuery__QueryClient.QueryClient.t<'queryData>=?,
+    ~client: ReactQuery__QueryClient.QueryClient.t=?,
   ) => React.element = "ReactQueryDevtools"
 }

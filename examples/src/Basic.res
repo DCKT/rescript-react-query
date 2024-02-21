@@ -83,7 +83,9 @@ module Posts = {
               className={
                 // We can access the query data here to show bold links for
                 // ones that are cached
-                queryClient.getQueryData(["post", post.id->Int.toString])->Option.isSome
+                queryClient
+                ->QueryClient.getQueryData(["post", post.id->Int.toString])
+                ->Option.isSome
                   ? "font-bold text-green-700"
                   : ""
               }>

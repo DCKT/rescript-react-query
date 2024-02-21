@@ -14,6 +14,16 @@ type placeholderData<'data> =
   | Data('data)
   | Function
 
+@unboxed
+type retry =
+  | Bool(bool)
+  | Int(int)
+  | Function(int => bool)
+@unboxed
+type retryDelay =
+  | Int(int)
+  | Function(int => float)
+
 type abortSignal
 type queryFnParams = {signal: abortSignal}
 
@@ -21,7 +31,8 @@ type queryOptions<'data> = {
   queryKey: array<string>,
   queryFn: queryFnParams => promise<'data>,
   staleTime?: int,
-  retry?: int,
+  retry?: retry,
+  retryDelay?: retryDelay,
   networkMode?: networkMode,
   enabled?: bool,
   refetchOnWindowFocus?: bool,
@@ -74,10 +85,14 @@ external useQueryWithSelect: queryOptionsWithSelect<'data, 'selectedData> => que
 @module("@tanstack/react-query")
 external useQueries: useQueriesOptions<'data> => array<queryState<'data>> = "useQueries"
 
-type useMutationOptions<'params, 'data> = {
+type useMutationOptions<'params, 'data, 'error, 'context> = {
   mutationFn: 'params => promise<'data>,
-  retry?: int,
-  onSettled?: unit => unit,
+  retry?: retry,
+  retryDelay?: retryDelay,
+  onMutate?: 'params => promise<'context>,
+  onError?: ('error, 'params, 'context) => unit,
+  onSuccess?: ('data, 'params, 'context) => unit,
+  onSettled?: ('data, 'error, 'params, 'context) => unit,
 }
 type mutationStatus =
   | @as("error") Error
@@ -85,25 +100,24 @@ type mutationStatus =
   | @as("idle") Idle
   | @as("success") Success
 
-type mutationState<'params, 'data, 'error, 'variables, 'context> = {
+type mutationState<'params, 'data, 'error, 'context> = {
   isPending: bool,
   isError: bool,
   isSuccess: bool,
   isFetching: bool,
   status: mutationStatus,
   reset: unit => unit,
-  onError: ('error, 'variables, 'context) => unit,
-  onSuccess: ('data, 'variables, 'context) => unit,
-  onSettled: ('data, 'error, 'variables, 'context) => unit,
+  onError: ('error, 'params, 'context) => unit,
+  onSuccess: ('data, 'params, 'context) => unit,
+  onSettled: ('data, 'error, 'params, 'context) => unit,
   mutate: 'params => unit,
   mutateAsync: 'params => promise<'data>,
 }
 @module("@tanstack/react-query")
-external useMutation: useMutationOptions<'params, 'data> => mutationState<
+external useMutation: useMutationOptions<'params, 'data, 'error, 'context> => mutationState<
   'params,
   'data,
   'error,
-  'variables,
   'context,
 > = "useMutation"
 
