@@ -1,6 +1,6 @@
 {
   "name": "@dck/rescript-react-query",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "ReScript bindings for react-query",
   "keywords": [
     "rescript",
