@@ -1,7 +1,10 @@
 {
-  "name": "@dck/rescript-<module>",
+  "name": "@dck/rescript-react-query",
   "uncurried": true,
   "namespace": false,
+  "jsx": {
+    "version": 4
+  },
   "sources": [
     {
       "dir": "src",
@@ -14,6 +17,7 @@
     }
   ],
   "suffix": ".mjs",
+  "bs-dependencies": ["@rescript/react"],
   "bs-dev-dependencies": ["@rescript/core", "rescript-bun"],
   "package-specs": [
     {

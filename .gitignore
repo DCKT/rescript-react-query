@@ -21,3 +21,4 @@ promise-*
 _release
 
 *.mjs
+*.bs.js

@@ -1,6 +1,5 @@
 open RescriptCore
 open RescriptBun
-open RescriptBun.Globals
 open Test
 
 let wait = ms => {

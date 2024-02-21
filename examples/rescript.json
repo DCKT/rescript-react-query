@@ -1,0 +1,27 @@
+{
+  "name": "vite-react-rescript-starter",
+  "sources": [
+    {
+      "dir": "src",
+      "subdirs": true
+    },
+    {
+      "dir": "../src",
+      "subdirs": true
+    }
+  ],
+  "package-specs": [
+    {
+      "module": "es6",
+      "in-source": true
+    }
+  ],
+  "suffix": ".bs.js",
+  "jsx": {
+    "version": 4,
+    "mode": "automatic"
+  },
+  "uncurried": true,
+  "bs-dependencies": ["@rescript/react", "@rescript/core", "@dck/rescript-ky"],
+  "bsc-flags": ["-open RescriptCore"]
+}

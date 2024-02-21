@@ -1,7 +1,7 @@
 {
-  "name": "@dck/rescript-<module>",
+  "name": "@dck/rescript-react-query",
   "version": "0.0.0",
-  "description": "ReScript bindings for <module>",
+  "description": "ReScript bindings for react-query",
   "keywords": [
     "rescript",
     "bindings"
@@ -13,10 +13,14 @@
     "url": "https://github.com/DCKT"
   },
   "peerDependencies": {
-    "rescript": ">=11.0.0"
+    "rescript": ">=11.0.0",
+    "@rescript/react": ">=0.12.1",
+    "@tanstack/react-query": "^5.22.2"
   },
   "devDependencies": {
     "@rescript/core": "^1.0.0",
+    "@rescript/react": "^0.12.1",
+    "@tanstack/react-query": "^5.22.2",
     "rescript": ">=11.0.0",
     "rescript-bun": "^0.4.1"
   },

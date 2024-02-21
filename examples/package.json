@@ -1,0 +1,31 @@
+{
+  "name": "vite-react-rescript-starter",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "build": "NINJA_ANSI_FORCED=1 vite build",
+    "clean": "rescript clean -with-deps",
+    "format": "rescript format -all",
+    "serve": "NINJA_ANSI_FORCED=1 vite preview",
+    "start": "NINJA_ANSI_FORCED=1 vite"
+  },
+  "dependencies": {
+    "@dck/rescript-ky": "^1.2.1",
+    "@rescript/core": "^0.6.0",
+    "@rescript/react": "^0.12.0",
+    "@tanstack/react-query-devtools": "^5.24.0",
+    "ky": "^1.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@jihchi/vite-plugin-rescript": "^5.5.0",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "jsdom": "^22.1.0",
+    "postcss": "^8.4.32",
+    "rescript": "^11.0.1",
+    "tailwindcss": "^3.4.0",
+    "vite": "^5.0.10"
+  }
+}
