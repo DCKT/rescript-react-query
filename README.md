@@ -32,6 +32,10 @@ The functions can be accessed through `ReactQuery` module.
 
 ### [Basic](https://github.com/DCKT/rescript-react-query/blob/main/examples/src/Basic.res)
 
+### [OptimisticUpdate](https://github.com/DCKT/rescript-react-query/blob/main/examples/src/OptimisticUpdate.res)
+
+### [ReactSuspense](https://github.com/DCKT/rescript-react-query/blob/main/examples/src/ReactSuspense.res)
+
 ### Basic
 
 ## Development

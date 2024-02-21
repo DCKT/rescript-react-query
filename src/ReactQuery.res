@@ -59,7 +59,7 @@ type fetchStatus =
   | @as("paused") Paused
   | @as("idle") Idle
 
-type queryState<'data> = {
+type rec queryState<'data> = {
   isPending: bool,
   isError: bool,
   isSuccess: bool,
@@ -68,6 +68,7 @@ type queryState<'data> = {
   fetchStatus: status,
   data: 'data,
   error: option<Js.Exn.t>,
+  refetch: unit => promise<queryState<'data>>,
 }
 
 type useQueriesOptions<'data> = {queries: array<queryOptions<'data>>}

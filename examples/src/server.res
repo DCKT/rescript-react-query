@@ -13,6 +13,8 @@ let wait = ms => {
   Promise.make((resolve, _) => setTimeout(() => resolve(), ms)->ignore)
 }
 
+let firstAttemptError = ref(true)
+
 @val
 external jsonResponse: (
   'a,
@@ -36,6 +38,11 @@ let server = Bun.serve({
     | "/decrease" => {
         counter := counter.contents - 1
         jsonResponse({"counter": counter.contents}, ~options={headers: FromArray(corsHeaders)})
+      }
+    | "/error" => {
+        let status = firstAttemptError.contents ? 500 : 200
+        firstAttemptError := false
+        jsonResponse(None, ~options={status, headers: FromArray(corsHeaders)})
       }
 
     | _ =>
