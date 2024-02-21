@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/DCKT/rescript-react-query/compare/v1.0.2...v1.0.3) (2024-02-21)
+
+
+### Bug Fixes
+
+* update bindings & add react suspense example ([cedf1a2](https://github.com/DCKT/rescript-react-query/commit/cedf1a24d6a1e9abc4ff65ef8c64bfe223925506))
+
 ## [1.0.2](https://github.com/DCKT/rescript-react-query/compare/v1.0.1...v1.0.2) (2024-02-21)
 
 
