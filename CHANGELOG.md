@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/DCKT/rescript-react-query/compare/v1.0.1...v1.0.2) (2024-02-21)
+
+
+### Bug Fixes
+
+* update mutation bindings & example ([e34e29e](https://github.com/DCKT/rescript-react-query/commit/e34e29e08576be06655f1f05800258706fa35425))
+
 ## [1.0.1](https://github.com/DCKT/rescript-react-query/compare/v1.0.0...v1.0.1) (2024-02-21)
 
 
